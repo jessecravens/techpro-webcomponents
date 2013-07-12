@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Basic Shadow DOM Example</title>
+  <meta charset="UTF-8" />
+  <style>
+    button {
+      color: green;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 15px;
+    }
+    #shadowHost {
+      margin:20px auto;
+      width:30%;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div id="shadowHost">
+    <button id="child">I am default in the main DOM</button>
+  </div>
+
+  <script>
+
+      var root = document.getElementById('shadowHost').webkitCreateShadowRoot();
+
+      var shadowChild = document.createElement("button");
+      
+      shadowChild.textContent = "I am Shadow DOM";
+
+      root.appendChild(shadowChild);
+
+      root.applyAuthorStyles = true;
+
+  </script>
+
+</body>
+</html>

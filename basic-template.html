@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Basic Shadow DOM Example</title>
+  <meta charset="UTF-8" />
+      <script src="polymer/polymer.js"></script>
+  <style>
+    button {
+      color: green;
+      padding: 10px;
+      border: 1px solid black;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+<template id="my-button-template" repeat="{{ buttons }}">
+    <button id="child">I am a button template {{ social }} : {{ handle }} </button>
+</template>
+
+<template id="my-button-template2">
+    <button id="child">I am a button template - not rendered</button>
+</template>
+
+<script>
+
+  var tmpl = document.querySelector('#my-button-template');
+  document.body.appendChild(tmpl.content.cloneNode(true));
+
+  var model = {
+    buttons: [
+      { social: 'Twitter', handle: '@jdcravens' },
+      { social: 'Facebook', handle: 'jesse.cravens' },
+      { social: 'LinkedIn', handle: 'jessecravens' },
+      { social: 'Github', handle: 'jessecravens' }
+    ]
+  };
+  
+  tmpl.model = model;
+
+</script>
+
+
+</body>
+</html>       
