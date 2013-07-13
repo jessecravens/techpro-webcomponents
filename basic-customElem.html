@@ -18,51 +18,7 @@
 </head>
 <body>
 
-
-
-<template id="commentTemplate">
-    <div>
-        <img src="">
-        <div class="comment-text">test</div>
-    </div>
-</template>
-
-
-<script>
-
-  function addComment(imageUrl, text) {
-
-    var t = document.querySelector("#commentTemplate");
-    var comment = t.content.cloneNode(true);
-
-    // Populate content.
-
-    comment.querySelector('img').src = imageUrl;
-    comment.querySelector('.comment-text').textContent = text;
-    document.body.appendChild(comment);
-
-  }
-
-</script>
-
-
-  <script>
-
-    // var proto = Object.create(HTMLButtonElement.prototype);
-
-    // proto.fire = function(){
-    //   console.log(this.textContent);
-    // };
-
-    // MyButton = document.register('my-button', {prototype: proto});
-
-  </script>
-
-<!--   <div id="shadowHost">
-    <button is="my-button" onclick="event.target.fire()">I am default in the main DOM</button>
-  </div> -->
-
-<!-- <element name="my-button">
+<element name="my-button">
   <template>
      from template: I am a custom element.
   </template>
@@ -86,7 +42,7 @@
 
 <button is="my-button">
    I am a custom element.
-</button> -->
+</button>
 
 </body>
 </html>       
